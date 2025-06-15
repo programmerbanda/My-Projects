@@ -1,0 +1,139 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4px 8px;
+  background-color: darkslategrey;
+  color: white;
+}
+
+.navbar ul {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.navbar ul li {
+  background-color: #dddbdb;
+  color: #000000;
+  padding: 4px 6px;
+  border-radius: 4px;
+  list-style: none;
+  cursor: pointer;
+}
+
+.navbar h2.logo {
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+}
+
+.user-logo {
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+}
+
+.search-container {
+  position: relative;
+}
+
+.search-container input[type="search"] {
+  padding: 6px 8px 6px 28px;
+  border: none;
+  border-radius: 4px;
+}
+
+#search-logo {
+  left: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: black;
+}
+
+li {
+    list-style-type: none;
+}
+
+.user-logo {
+    cursor: pointer;
+}
+
+hr {
+    height: 20px;
+}
+
+.hero-section {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background-color: red;
+}
+
+.proudct-details {
+    display: flex;
+}
+
+.proudct-details li {
+    padding: 5px 6px ;
+}
+
+.trello-boards {
+    padding: 5px 6px ;
+}
+
+.public-button a {
+    text-decoration: none;
+    padding: 5px 6px;
+}
+
+.hero-right {
+    display: flex;
+    justify-content: end;
+}
+
+.hero-right div ul {
+    display: flex;
+    justify-content: end;
+}
+
+.users {
+    display: flex;
+    align-items: center;
+}
+
+.users-images {
+    display: flex;
+
+}
+
+.users-images li {
+    position: absolute;
+}
+
+.users-images li img {
+    height: 52px;
+    width: 52px;
+    border-radius: 50%;
+}
+
+.user-count {
+    height: 52px;
+    width: 52px;
+    background-color: grey;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu-tools ul {
+    display: flex; 
+    gap: 10px
+}
