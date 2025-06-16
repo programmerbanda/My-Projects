@@ -9,7 +9,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 4px 8px;
-  background-color: darkslategrey;
+  background-color: #c1cbd2;
   color: white;
 }
 
@@ -22,13 +22,14 @@
 .navbar ul li {
   background-color: #dddbdb;
   color: #000000;
+  height: 36px;
   padding: 4px 6px;
   border-radius: 4px;
   list-style: none;
   cursor: pointer;
 }
 
-.navbar h2.logo {
+.logo {
   font-size: 20px;
   font-weight: bold;
   color: white;
@@ -38,6 +39,11 @@
   border-radius: 50%;
   width: 36px;
   height: 36px;
+  cursor: pointer;
+}
+
+.nav-left li img {
+  margin-right: 10px;
 }
 
 .search-container {
@@ -51,89 +57,135 @@
 }
 
 #search-logo {
+  position: absolute;
   left: 8px;
   top: 50%;
   transform: translateY(-50%);
   color: black;
+  width: 16px;
+  height: 16px;
 }
 
-li {
-    list-style-type: none;
+.logo-container {
+  display: flex;
+  gap:4px
 }
 
-.user-logo {
-    cursor: pointer;
+.main-header {
+  width: 100%;
+  height: 44px;
+  display: flex;
+  background-color: #d8dfe3;
+}
+
+.header-left {
+  width: 50%;
+  height: 40px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.header-left button {
+  display: flex;
+  gap: 3px;
+  align-items: center;
+  padding: 4px 8px;
+  border-radius: 4px;
+  border: none;
+}
+
+.product-star {
+  width: 50%;
+  display: flex;
+  justify-content: space-between;
 }
 
 hr {
-    height: 20px;
+  width: 2px;
 }
 
-.hero-section {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    background-color: red;
+.trello-public {
+  display: flex;
+  gap:10px;
 }
 
-.proudct-details {
-    display: flex;
+.header-right {
+  width: 50%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.proudct-details li {
-    padding: 5px 6px ;
-}
-
-.trello-boards {
-    padding: 5px 6px ;
-}
-
-.public-button a {
-    text-decoration: none;
-    padding: 5px 6px;
-}
-
-.hero-right {
-    display: flex;
-    justify-content: end;
-}
-
-.hero-right div ul {
-    display: flex;
-    justify-content: end;
-}
-
-.users {
-    display: flex;
-    align-items: center;
-}
-
-.users-images {
-    display: flex;
+.header-users {
+  display: flex;
 
 }
 
-.users-images li {
-    position: absolute;
+.header-users img {
+  width: 36px;
+  height: 36px;
+  margin: 0 -8px;
+  border-radius: 50%;
+  object-fit: cover;
 }
 
-.users-images li img {
-    height: 52px;
-    width: 52px;
-    border-radius: 50%;
+.header-users img:hover, span:hover {
+  cursor: pointer;
 }
 
-.user-count {
-    height: 52px;
-    width: 52px;
-    background-color: grey;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.header-users span {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #a9b8c2;
+  margin-right: 10px;
 }
 
-.menu-tools ul {
-    display: flex; 
-    gap: 10px
+.header-elements {
+  display: flex;
+}
+
+.header-elements button {
+  height: 30px;
+  padding: 2px 4px;
+  display: flex;
+  align-items: center;
+  margin: 0 2px;
+}
+
+.temp-btn {
+  cursor: pointer;
+}
+
+.star-btn, .public-btn, .trello-btn, .invite-btn, .calendar-btn, .butler-btn, .copy-boards-btn, .show-menu-btn {
+  background-color: #a9b8c2;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 4px 8px;
+  font-size: 12px;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 1px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+  transition: background-color 0.2s ease;
+}
+
+.star-btn:hover, .public-btn:hover, .trello-btn:hover, .invite-btn:hover, .calendar-btn:hover, .butler-btn:hover, .copy-boards-btn:hover, .show-menu-btn:hover {
+  background-color: #9aaab3;
+}
+
+.dots {
+  font-size: 16px;
+  line-height: 1;
+}
+
+.main-body {
+  background-color: #c1cbd2;
 }
