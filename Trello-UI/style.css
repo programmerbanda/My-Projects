@@ -1,7 +1,23 @@
+:root {
+  --nav-bgc: #64747E;
+  --color: #ffffff;
+  --border-radius: 6px;
+  --transition: 0.2s ease;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+body {
+  background-image: url('/ian-dooley-407846-unsplash.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  font-family: Inter, sans-serif;
 }
 
 .navbar {
@@ -9,19 +25,18 @@
   justify-content: space-between;
   align-items: center;
   padding: 4px 8px;
-  background-color: #c1cbd2;
-  color: white;
+  background-color: var(--nav-bgc);
 }
 
 .navbar ul {
   display: flex;
-  gap: 10px;
+  gap: 8px;
   align-items: center;
 }
 
 .navbar ul li {
-  background-color: #dddbdb;
-  color: #000000;
+  background-color: #939FA5;
+  color: var(--color);
   height: 36px;
   padding: 4px 6px;
   border-radius: 4px;
@@ -32,7 +47,7 @@
 .logo {
   font-size: 20px;
   font-weight: bold;
-  color: white;
+  color: var(--color);
 }
 
 .user-logo {
@@ -54,6 +69,7 @@
   padding: 6px 8px 6px 28px;
   border: none;
   border-radius: 4px;
+  cursor: pointer;
 }
 
 #search-logo {
@@ -68,22 +84,23 @@
 
 .logo-container {
   display: flex;
-  gap:4px
+  gap: 4px;
 }
 
 .main-header {
   width: 100%;
   height: 44px;
   display: flex;
-  background-color: #d8dfe3;
+}
+
+.header-left, .header-right {
+  display: flex;
+  align-items: center;
 }
 
 .header-left {
   width: 50%;
-  height: 40px;
-  display: flex;
   justify-content: space-around;
-  align-items: center;
 }
 
 .header-left button {
@@ -98,28 +115,41 @@
 .product-star {
   width: 50%;
   display: flex;
+  align-items: center;
   justify-content: space-between;
+  color: var(--color);
+  gap: 8px;
 }
 
-hr {
+.product-star h2 {
+  font-size: 18px;
+  margin: 3px 6px;
+}
+
+.product-star button {
+  height: 30px;
+  margin: 10px 0;
+}
+
+.product-star hr {
   width: 2px;
+  height: 30px;
+  margin: 10px 0px;
 }
 
 .trello-public {
   display: flex;
-  gap:10px;
+  gap: 10px;
 }
 
 .header-right {
   width: 50%;
-  display: flex;
   justify-content: space-between;
-  align-items: center;
 }
 
 .header-users {
   display: flex;
-
+  transition: var(--transition);
 }
 
 .header-users img {
@@ -130,8 +160,9 @@ hr {
   object-fit: cover;
 }
 
-.header-users img:hover, span:hover {
+.header-users img:hover {
   cursor: pointer;
+  z-index: 999;
 }
 
 .header-users span {
@@ -145,40 +176,42 @@ hr {
   margin-right: 10px;
 }
 
+.header-users span:hover {
+  cursor: pointer;
+}
+
 .header-elements {
   display: flex;
 }
 
-.header-elements button {
+.header-elements button, .btns {
   height: 30px;
   padding: 2px 4px;
   display: flex;
   align-items: center;
   margin: 0 2px;
-}
-
-.temp-btn {
-  cursor: pointer;
-}
-
-.star-btn, .public-btn, .trello-btn, .invite-btn, .calendar-btn, .butler-btn, .copy-boards-btn, .show-menu-btn {
   background-color: #a9b8c2;
-  color: white;
+  color: var(--color);
   border: none;
-  border-radius: 6px;
-  padding: 4px 8px;
+  border-radius: var(--border-radius);
   font-size: 12px;
   font-weight: bold;
   cursor: pointer;
-  display: flex;
-  align-items: center;
   gap: 1px;
   box-shadow: 0 1px 2px rgba(0,0,0,0.2);
-  transition: background-color 0.2s ease;
+  transition: background-color var(--transition);
 }
 
-.star-btn:hover, .public-btn:hover, .trello-btn:hover, .invite-btn:hover, .calendar-btn:hover, .butler-btn:hover, .copy-boards-btn:hover, .show-menu-btn:hover {
+.btns {
+  padding: 6px 8px;
+}
+
+.header-elements button:hover, .btns:hover {
   background-color: #9aaab3;
+}
+
+.temp-btn {
+  background-color: #D5DADE;
 }
 
 .dots {
@@ -187,5 +220,331 @@ hr {
 }
 
 .main-body {
-  background-color: #c1cbd2;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 16px;
+  padding: 16px;
+  overflow-x: auto;
+  scroll-snap-type: x proximity;
+}
+
+.containers {
+  background-color: var(--nav-bgc);
+  border-radius: 12px;
+  padding: 12px;
+  color: white;
+  scroll-snap-align: start;
+  min-width: 280px;
+  height: fit-content;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 4px;
+  margin-bottom: 8px;
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.header button {
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.add-btn {
+  width: 100%;
+  padding: 8px 12px;
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  border-radius: 8px;
+  color: white;
+  text-align: left;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  transition: background var(--transition);
+}
+
+.add-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.add-btn span {
+  font-size: 18px;
+}
+
+.input-value {
+  height: 30px;
+  width: 90%;
+  padding-left: 20px;
+}
+
+.task-input {
+  width: 100%;
+  padding: 8px 10px;
+  margin-top: 8px;
+  border: 1px solid #ccc;
+  border-radius: var(--border-radius);
+  font-size: 14px;
+  outline: none;
+}
+
+.showTask {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.task-item {
+  background-color: #fff;
+  padding: 10px 12px;
+  border-radius: var(--border-radius);
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  transition: var(--transition);
+}
+
+.task-item.completed .task-text {
+  text-decoration: line-through;
+  color: #999;
+}
+
+.task-text {
+  flex: 1;
+  margin-left: 10px;
+  font-size: 14px;
+  color: #000000;
+}
+
+.complete-checkbox {
+  cursor: pointer;
+  height: 20px;
+}
+
+.delete-button {
+  background-color: transparent;
+  border: none;
+  color: #c00;
+  font-size: 12px;
+  cursor: pointer;
+  margin-left: 80px;
+  transition: color var(--transition);
+}
+
+.delete-button:hover {
+  color: #a00;
+}
+
+@media screen and (max-width: 1024px) {
+  .main-header {
+    flex-direction: column;
+    height: auto;
+    padding: 10px;
+  }
+
+  .header-left, .header-right {
+    width: 100%;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .header-users {
+    display: none;
+  }
+
+  .main-body {
+    justify-content: center;
+  }
+
+  .main-body div {
+    min-width: 40%; 
+    margin: 12px 10px;
+  }
+
+  .trello-public {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .navbar ul {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+
+  .nav-left li {
+    display: none;
+  }
+
+  .nav-left {
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+
+  .nav-right {
+    position: absolute;
+    top: 4px;
+    right: 10px;
+  }
+
+  .logo-container {
+    margin: 6px 6px;
+  }
+
+  .trello-boards {
+    display: none;
+  }
+
+  .main-header {
+    flex-direction: column;
+    height: auto;
+    gap: 10px;
+    padding: 10px;
+    align-items: center;
+  }
+
+  .header-elements {
+    flex-wrap: wrap;
+    width: 60%;
+    gap: 6px;
+  }
+
+  .header-elements button {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .main-body > div {
+    width: 400px;
+    scroll-snap-align: center;
+  }
+
+  .body button {
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .product-star {
+    width: 100%;
+    position: absolute;
+    left: 10px;
+    top: 100px;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .header-users {
+    position: absolute;
+    right: 10px;
+    top: 100px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .navbar {
+    flex-direction: column;
+    gap: 6px;
+    padding: 6px;
+  }
+
+  .navbar ul {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .nav-left li,
+  .nav-right li {
+    font-size: 12px;
+    padding: 4px;
+  }
+
+  .main-body > div {
+    width: 95%;
+  }
+
+  .task-input {
+    font-size: 13px;
+  }
+
+  .task-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .task-text {
+    margin-left: 0;
+    margin-top: 6px;
+  }
+
+  .delete-button {
+    margin-left: 0;
+    align-self: flex-end;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .search-container input[type="search"] {
+    display: none;
+  }
+
+  .nav-right li {
+    display: none;
+  }
+
+  .logo-container {
+    position: absolute;
+  }
+
+  .user-logo {
+    position: absolute;
+    top: 4px;
+    right: 10px;
+  }
+
+  .invite {
+    position: absolute;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .navbar, .main-header, .main-body {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .main-body > div {
+    width: 90%;
+    margin: 10px auto;
+  }
+
+  .task-text {
+    font-size: 12px;
+  }
+
+  .delete-button {
+    margin-left: 20px;
+  }
 }

@@ -15,10 +15,11 @@
             <li>
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                     <path
-                        d="M12 2a1 1 0 00-.71.3L1.2 11.1a.5.5 0 00.3.9H4v8a1 1 0 001 1h4a1 1 0 001-1v-6h4v6a1 1 0 001 1h4a1 1 0 001-1v-8h2.5a.5.5 0 00.3-.9L12.71 2.3A1 1 0 0012 2z" />
+                    fill="#ffffff"
+                    d="M12 2a1 1 0 00-.71.3L1.2 11.1a.5.5 0 00.3.9H4v8a1 1 0 001 1h4a1 1 0 001-1v-6h4v6a1 1 0 001 1h4a1 1 0 001-1v-8h2.5a.5.5 0 00.3-.9L12.71 2.3A1 1 0 0012 2z" />
                 </svg>
             </li>
-            <li style="display: flex; align-items: center;">
+            <li class="trello-boards" style="display: flex; align-items: center;">
                 <img style="gap:5px" width="24px" src="/Trello-UI/trello-svgrepo-com.svg" alt="Trello Logo">
                 <span>Boards </span>
 
@@ -37,6 +38,7 @@
             <img width="24" src="/Trello-UI/trello-svgrepo-com.svg" alt="">
             <h2 class="logo">Trello</h2>
         </div>
+
 
         <ul class="nav-right">
             <li>
@@ -76,7 +78,7 @@
                     Product Launch
                 </h2>
                 <button class="temp-btn">Template</button>
-                <button class="star-btn">
+                <button class="star-btn btns">
                     <svg width="20" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                         stroke-width="1.5" stroke="currentColor" class="size-6">
                         <path stroke-linecap="round" stroke-linejoin="round"
@@ -86,12 +88,12 @@
                 <hr>
             </div>
             <div class="trello-public">
-                <button class="trello-btn">
+                <button class="trello-btn btns">
                     <img width="20px" src="/Trello-UI/trello-svgrepo-com.svg" alt="">
                     <span>Trello Inspiring Boards</span>
                 </button>
                 <hr />
-                <button class="public-btn">
+                <button class="public-btn btns">
                     <svg width="20px" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                         stroke-width="1.5" stroke="currentColor" class="size-6">
                         <path stroke-linecap="round" stroke-linejoin="round"
@@ -113,10 +115,10 @@
                 <img src="/users-images/183069-3840x2160-desktop-4k-demon-slayer-kimetsu-no-yaiba-wallpaper.jpg" alt="">
                 <img src="/users-images/183516-2048x2732-iphone-hd-demon-slayer-kimetsu-no-yaiba-wallpaper.jpg" alt="">
                 <span>+9</span>
-                <button class="invite-btn">Invite</button>
+                <button class="invite-btn btns">Invite</button>
             </div>
             <div class="header-elements">
-                <button class="calendar-btn">
+                <button class="calendar-btn btns">
                     <svg width="20px" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                         stroke-width="1.5" stroke="black" class="size-6">
                         <path stroke-linecap="round" stroke-linejoin="round"
@@ -124,25 +126,102 @@
                     </svg>
                     <span>Calendar</span>
                 </button>
-                <button class="butler-btn">
+                <button class="butler-btn btns">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="black" viewBox="0 0 24 24">
                         <path
                             d="M12 4a1 1 0 0 1 1 1v1.07A7.002 7.002 0 0 1 19 13h1a1 1 0 1 1 0 2H4a1 1 0 1 1 0-2h1a7.002 7.002 0 0 1 6-6.93V5a1 1 0 0 1 1-1zm0 12a5 5 0 0 0 5-5H7a5 5 0 0 0 5 5zm-8 2a1 1 0 0 0 0 2h16a1 1 0 1 0 0-2H4z" />
                     </svg>
                     <span>Butler</span>
                 </button>
-                <button class="copy-boards-btn">
+                <button class="copy-boards-btn btns">
                     <img style="width: 20px;" src="/Trello-UI/trello-svgrepo-com.svg" alt="Trello Icon">
                     <span>Copy Board</span>
                 </button>
-                <button class="show-menu-btn">
+                <button class="show-menu-btn btns">
                     <span class="dots">⋯</span> Show Menu
                 </button>
             </div>
         </div>
     </header>
     <main class="main-body">
-        <div>hi</div>
+        <div class="containers">
+            <div class="header">
+                <h4>
+                    Launch Info
+                </h4>
+                <button>
+                    ...
+                </button>
+            </div>
+            <div class="body">
+                <button class="add-btn">
+                    <span>+</span> Add a card
+                </button>
+                <ul draggable="true" class="showTask"></ul>
+            </div>
+        </div>
+        <div class="containers">
+            <div class="header">
+                <h4>To Do</h4>
+                <button>
+                    ...
+                </button>
+            </div>
+            <div class="body">
+                <button class="add-btn">
+                    <span>+</span> Add a card
+                </button>
+                <ul draggable="true" class="showTask"></ul>
+            </div>
+        </div>
+        <div class="containers">
+            <div class="header">
+                <h4>Doing</h4>
+                <button>
+                    ...
+                </button>
+            </div>
+            <div class="body">
+                <button class="add-btn">
+                    <span>+</span> Add a card
+                </button>
+            </div>
+            <ul draggable="true" class="showTask"></ul>
+        </div>
+        <div class="containers">
+            <div class="header">
+                <h4>Ready For Launch</h4>
+                <button>
+                    ...
+                </button>
+            </div>
+            <div class="body">
+                <button class="add-btn">
+                    <span>+</span> Add a card
+                </button>
+                <ul draggable="true" class="showTask"></ul>
+            </div>
+        </div>
+        <div class="containers">
+            <div class="header">
+                <h4>
+                    Launched
+                </h4>
+                <button>
+                    ...
+                </button>
+            </div>
+            <div class="body">
+                <button class="add-btn">
+                    <span>+</span> Add a card
+                </button>
+                <ul draggable="true" class="showTask">
+
+                </ul>
+            </div>
+        </div>
     </main>
+    <script src="trello.js"></script>
 </body>
+
 </html>
