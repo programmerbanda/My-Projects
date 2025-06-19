@@ -368,10 +368,6 @@ body {
   transition: color var(--transition);
 }
 
-.delete-button:hover {
-  color: #a00;
-}
-
 .header-menu-container {
   position: relative;
 }
