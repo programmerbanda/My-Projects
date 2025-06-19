@@ -322,6 +322,6 @@ function setupContainerClosing() {
             document.querySelectorAll('.menu-options.show').forEach(menu => {
                 menu.classList.remove('show');
             });
-        }
+        };
     });
 }
