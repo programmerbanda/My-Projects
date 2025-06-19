@@ -1,8 +1,14 @@
 :root {
-  --nav-bgc: #ffffff;
+  --color-fg: #ffffff;
+  --color-bg: #000000;
+  --button-color : #e1e5e7;
   --color: #021637;
   --border-radius: 6px;
   --transition: 0.2s ease;
+  --get-small : 4px;
+  --get-medium : 8px;
+  --get-large : 12px;
+  --background-color : linear-gradient(to top, #E1F1F7, #F6FAFB, #DEEDF6);
 }
 
 * {
@@ -12,7 +18,7 @@
 }
 
 body {
-  background: linear-gradient(to top, #E1F1F7, #F6FAFB, #DEEDF6);
+  background:var(--background-color) ;
   font-family: Inter, sans-serif;
 }
 
@@ -20,22 +26,22 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 4px 8px;
-  background-color: var(--nav-bgc);
+  padding: var(--get-small) var(--get-medium);
+  background-color: var(--color-fg);
 }
 
 .navbar ul {
   display: flex;
-  gap: 8px;
+  gap: var(--get-medium);
   align-items: center;
 }
 
 .navbar ul li {
-  /* background-color: #939FA5; */
+  background-color: var(--button-color);
   color: var(--color);
   height: 36px;
   padding: 4px 6px;
-  border-radius: 4px;
+  border-radius: var(--get-small);
   list-style: none;
   cursor: pointer;
 }
@@ -51,6 +57,18 @@ body {
   width: 36px;
   height: 36px;
   cursor: pointer;
+}
+
+#toggleTheme {
+  font-size: 18px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  padding: 2px;
+}
+
+#toggleTheme:active {
+  scale : 0.90
 }
 
 .nav-left li img {
@@ -169,12 +187,13 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #a9b8c2;
+  background-color: var(--button-color);
   margin-right: 10px;
 }
 
 .header-users span:hover {
   cursor: pointer;
+  background-color: #9aaab3;
 }
 
 .header-elements {
@@ -187,7 +206,7 @@ body {
   display: flex;
   align-items: center;
   margin: 0 2px;
-  background-color: #a9b8c2;
+  background-color: var(--button-color);
   color: var(--color);
   border: none;
   border-radius: var(--border-radius);
@@ -261,7 +280,6 @@ body {
 .add-btn {
   width: 100%;
   padding: 8px 12px;
-  background: rgba(255, 255, 255, 0.1);
   border: none;
   border-radius: 8px;
   color: var(--color);
@@ -331,6 +349,10 @@ body {
   color: var(--color);
 }
 
+.task-item:hover {
+  cursor: pointer;
+}
+
 .complete-checkbox {
   cursor: pointer;
   height: 20px;
@@ -348,6 +370,47 @@ body {
 
 .delete-button:hover {
   color: #a00;
+}
+
+.header-menu-container {
+  position: relative;
+}
+
+.menu-options {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 100%;
+  background: white;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  z-index: 100;
+  min-width: 120px;
+}
+
+.menu-options.show {
+  display: block;
+}
+
+.close-container {
+  width: 100%;
+  padding: 8px 12px;
+  text-align: left;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.close-container:hover {
+  background-color: #f5f5f5;
+}
+
+.dark-theme .menu-options {
+  background: #2d2d2d;
+}
+
+.dark-theme .close-container:hover {
+  background-color: #3d3d3d;
 }
 
 @media screen and (max-width: 1024px) {
@@ -373,7 +436,7 @@ body {
 
   .main-body div {
     min-width: 40%; 
-    margin: 12px 10px;
+    margin: 10px;
   }
 
   .trello-public {
@@ -390,9 +453,9 @@ body {
 
 @media screen and (max-width: 768px) {
   .navbar {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 8px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 6px;
   }
 
   .navbar ul {
@@ -400,9 +463,16 @@ body {
     justify-content: flex-start;
   }
 
-
   .home-icon, .trello-boards img, .trello-boards span {
     display: none;
+  }
+
+  .trello-boards {
+    display: none;
+    padding: 0 !important;
+    width: 0 !important;
+    margin: 0 !important;
+    overflow: hidden;
   }
 
   .nav-left {
@@ -425,7 +495,7 @@ body {
 
   .search-container {
     position: absolute;
-    left: 90px
+    left: 95px
   }
 
   .main-header {
@@ -493,9 +563,11 @@ body {
 }
 
 @media screen and (max-width: 480px) {
-
+  .search-container {
+    width: 120px;
+  }
   .search-container input {
-    width: 50%;
+    width: 100%;
   }
   .navbar {
     flex-direction: column;
@@ -540,6 +612,12 @@ body {
 }
 
 @media screen and (max-width: 375px) {
+  .plus-icon,
+  .about-icon,
+  .notification-icon,
+  .setting-icon {
+    display: none;
+  }
   .user-logo {
     position: absolute;
     top: 4px;

@@ -14,9 +14,8 @@
         <ul class="nav-left">
             <li class="home-icon">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                    <path
-                    fill="#021637"
-                    d="M12 2a1 1 0 00-.71.3L1.2 11.1a.5.5 0 00.3.9H4v8a1 1 0 001 1h4a1 1 0 001-1v-6h4v6a1 1 0 001 1h4a1 1 0 001-1v-8h2.5a.5.5 0 00.3-.9L12.71 2.3A1 1 0 0012 2z" />
+                    <path fill="#021637"
+                        d="M12 2a1 1 0 00-.71.3L1.2 11.1a.5.5 0 00.3.9H4v8a1 1 0 001 1h4a1 1 0 001-1v-6h4v6a1 1 0 001 1h4a1 1 0 001-1v-8h2.5a.5.5 0 00.3-.9L12.71 2.3A1 1 0 0012 2z" />
                 </svg>
             </li>
             <li class="trello-boards" style="display: flex; align-items: center;">
@@ -42,6 +41,9 @@
 
         <ul class="nav-right">
             <li>
+                <button id="toggleTheme">🌞</button>
+            </li>
+            <li class="plus-icon">
                 <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
                     <path fill-rule="evenodd" clip-rule="evenodd"
                         d="M2 12a10 10 0 1 1 20 0 10 10 0 0 1-20 0zm10-8a8 8 0 1 0 0 16 8 8 0 0 0 0-16zm1 9h4a1 1 0 0 0 0-2h-4V7a1 1 0 1 0-2 0v4H7a1 1 0 0 0 0 2h4v4a1 1 0 1 0 2 0v-4z" />
@@ -54,7 +56,7 @@
                         clip-rule="evenodd" />
                 </svg>
             </li>
-            <li>
+            <li class="notification-icon">
                 <svg width="24" stroke="currentColor" fill="none" viewBox="0 0 24 24" stroke-width="1.5">
                     <path stroke-linecap="round" stroke-linejoin="round"
                         d="M14.86 17.08a23.85 23.85 0 0 0 5.45-1.31A8.97 8.97 0 0 1 18 9.75V9A6 6 0 0 0 6 9v.75a8.97 8.97 0 0 1-2.31 6.02c1.73.64 3.56 1.08 5.45 1.31m5.72 0a24.26 24.26 0 0 1-5.72 0m5.72 0a3 3 0 1 1-5.72 0" />
@@ -149,9 +151,14 @@
                 <h4>
                     Launch Info
                 </h4>
-                <button>
-                    ...
-                </button>
+                <div class="header-menu-container">
+                    <button class="header-menu">
+                        <span class="dots">...</span>
+                    </button>
+                    <div class="menu-options">
+                        <button class="close-container">Close List</button>
+                    </div>
+                </div>
             </div>
             <div class="body">
                 <button class="add-btn">
@@ -163,43 +170,58 @@
         <div class="containers">
             <div class="header">
                 <h4>To Do</h4>
-                <button>
-                    ...
-                </button>
+                <div class="header-menu-container">
+                    <button class="header-menu">
+                        <span class="dots">...</span>
+                    </button>
+                    <div class="menu-options">
+                        <button class="close-container">Close List</button>
+                    </div>
+                </div>
             </div>
             <div class="body">
                 <button class="add-btn">
                     <span>+</span> Add a card
                 </button>
-                <ul draggable="true" class="showTask" id="to-do-container" ></ul>
+                <ul draggable="true" class="showTask" id="to-do-container"></ul>
             </div>
         </div>
         <div class="containers">
             <div class="header">
                 <h4>Doing</h4>
-                <button>
-                    ...
-                </button>
+                <div class="header-menu-container">
+                    <button class="header-menu">
+                        <span class="dots">...</span>
+                    </button>
+                    <div class="menu-options">
+                        <button class="close-container">Close List</button>
+                    </div>
+                </div>
             </div>
             <div class="body">
                 <button class="add-btn">
                     <span>+</span> Add a card
                 </button>
             </div>
-            <ul draggable="true" class="showTask" id="doing-container" ></ul>
+            <ul draggable="true" class="showTask" id="doing-container"></ul>
         </div>
         <div class="containers">
             <div class="header">
                 <h4>Ready For Launch</h4>
-                <button>
-                    ...
-                </button>
+                <div class="header-menu-container">
+                    <button class="header-menu">
+                        <span class="dots">...</span>
+                    </button>
+                    <div class="menu-options">
+                        <button class="close-container">Close List</button>
+                    </div>
+                </div>
             </div>
             <div class="body">
                 <button class="add-btn">
                     <span>+</span> Add a card
                 </button>
-                <ul draggable="true" class="showTask" id="ready-container" ></ul>
+                <ul draggable="true" class="showTask" id="ready-container"></ul>
             </div>
         </div>
         <div class="containers">
@@ -207,9 +229,14 @@
                 <h4>
                     Launched
                 </h4>
-                <button>
-                    ...
-                </button>
+                <div class="header-menu-container">
+                    <button class="header-menu">
+                        <span class="dots">...</span>
+                    </button>
+                    <div class="menu-options">
+                        <button class="close-container">Close List</button>
+                    </div>
+                </div>  
             </div>
             <div class="body">
                 <button class="add-btn">
