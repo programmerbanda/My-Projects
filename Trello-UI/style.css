@@ -1,6 +1,6 @@
 :root {
-  --nav-bgc: #64747E;
-  --color: #ffffff;
+  --nav-bgc: #ffffff;
+  --color: #021637;
   --border-radius: 6px;
   --transition: 0.2s ease;
 }
@@ -12,11 +12,7 @@
 }
 
 body {
-  background-image: url('/ian-dooley-407846-unsplash.jpg');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-attachment: fixed;
+  background: linear-gradient(to top, #E1F1F7, #F6FAFB, #DEEDF6);
   font-family: Inter, sans-serif;
 }
 
@@ -35,7 +31,7 @@ body {
 }
 
 .navbar ul li {
-  background-color: #939FA5;
+  /* background-color: #939FA5; */
   color: var(--color);
   height: 36px;
   padding: 4px 6px;
@@ -70,6 +66,7 @@ body {
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  border: 1px solid var(--color);
 }
 
 #search-logo {
@@ -77,7 +74,7 @@ body {
   left: 8px;
   top: 50%;
   transform: translateY(-50%);
-  color: black;
+  color: var(--color);
   width: 16px;
   height: 16px;
 }
@@ -232,12 +229,13 @@ body {
   background-color: var(--nav-bgc);
   border-radius: 12px;
   padding: 12px;
-  color: white;
+  color: var(--color);
   scroll-snap-align: start;
   min-width: 280px;
   height: fit-content;
   max-height: 80vh;
   overflow-y: auto;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
 
 .header {
@@ -266,13 +264,14 @@ body {
   background: rgba(255, 255, 255, 0.1);
   border: none;
   border-radius: 8px;
-  color: white;
+  color: var(--color);
   text-align: left;
   cursor: pointer;
   display: flex;
   align-items: center;
   gap: 4px;
   transition: background var(--transition);
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
 }
 
 .add-btn:hover {
@@ -309,27 +308,27 @@ body {
 }
 
 .task-item {
-  background-color: #fff;
+  background-color: var(--nav-bgc);
   padding: 10px 12px;
   border-radius: var(--border-radius);
   margin-bottom: 8px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
   transition: var(--transition);
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, rgb(209, 213, 219) 0px 0px 0px 1px inset;
 }
 
 .task-item.completed .task-text {
   text-decoration: line-through;
-  color: #999;
+  color: var(--color);
 }
 
 .task-text {
   flex: 1;
   margin-left: 10px;
   font-size: 14px;
-  color: #000000;
+  color: var(--color);
 }
 
 .complete-checkbox {
@@ -380,6 +379,13 @@ body {
   .trello-public {
     display: none;
   }
+  .product-star hr {
+    display: none;
+  }
+
+  .header-elements button {
+    margin: 0px 6px;
+  }
 }
 
 @media screen and (max-width: 768px) {
@@ -394,7 +400,8 @@ body {
     justify-content: flex-start;
   }
 
-  .nav-left li {
+
+  .home-icon, .trello-boards img, .trello-boards span {
     display: none;
   }
 
@@ -410,15 +417,20 @@ body {
   }
 
   .logo-container {
+    position: absolute;
+    left: 3px;
+    top: 3px;
     margin: 6px 6px;
   }
 
-  .trello-boards {
-    display: none;
+  .search-container {
+    position: absolute;
+    left: 90px
   }
 
   .main-header {
     flex-direction: column;
+    flex-wrap: wrap;
     height: auto;
     gap: 10px;
     padding: 10px;
@@ -426,34 +438,51 @@ body {
   }
 
   .header-elements {
-    flex-wrap: wrap;
-    width: 60%;
-    gap: 6px;
-  }
-
-  .header-elements button {
-    width: 100%;
-    justify-content: center;
+    display: none;
   }
 
   .main-body > div {
-    width: 400px;
+    width: 280px;
     scroll-snap-align: center;
   }
 
   .body button {
     justify-content: center;
   }
+
+  .product-star {
+    position: absolute;
+    left: 10px;
+    top: 50px;
+    align-items: center;
+    gap: 20px;
+  }
+  .temp-btn {
+    height: 30px;
+    width: 70px;
+    display: flex;
+    justify-content: center;
+  }
+  .product-star hr {
+    display: none;
+  }
 }
 
 @media screen and (max-width: 600px) {
+  .about-icon, .setting-icon {
+    display: none;
+  }
+
   .product-star {
-    width: 100%;
     position: absolute;
     left: 10px;
-    top: 100px;
+    top: 50px;
     align-items: center;
     gap: 20px;
+  }
+
+  .product-star hr {
+    display: none;
   }
 
   .header-users {
@@ -464,6 +493,10 @@ body {
 }
 
 @media screen and (max-width: 480px) {
+
+  .search-container input {
+    width: 50%;
+  }
   .navbar {
     flex-direction: column;
     gap: 6px;
@@ -492,6 +525,7 @@ body {
   .task-item {
     flex-direction: column;
     align-items: flex-start;
+    cursor: grab;
   }
 
   .task-text {
@@ -506,18 +540,6 @@ body {
 }
 
 @media screen and (max-width: 375px) {
-  .search-container input[type="search"] {
-    display: none;
-  }
-
-  .nav-right li {
-    display: none;
-  }
-
-  .logo-container {
-    position: absolute;
-  }
-
   .user-logo {
     position: absolute;
     top: 4px;
