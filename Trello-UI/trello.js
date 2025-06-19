@@ -233,14 +233,12 @@ function handleDragOver(e) {
         this.classList.add('drag-over');
         e.dataTransfer.dropEffect = 'move';
         
-        // Get the element after which we should insert
         const afterElement = getDragAfterElement(this, e.clientY);
         if (afterElement) {
             afterElement.style.marginTop = '40px';
-        }
-    }
-}
-
+        };
+    };
+};
 function handleDragLeave() {
     this.classList.remove('drag-over');
     this.querySelectorAll('.task-item').forEach(item => {
